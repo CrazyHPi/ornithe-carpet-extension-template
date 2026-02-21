@@ -12,8 +12,8 @@ public class CarpetExtensionSettings {
     // example int setting
     @Rule(
             desc = "Your extension settings",
-            category = EXTENSION,
+            categories = EXTENSION,
             options = {"1", "2", "3"}
     )
-    public static int extensionInt = 0;
+    public static int extensionInt = 1;
 }
