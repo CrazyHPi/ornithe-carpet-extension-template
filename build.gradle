@@ -1,6 +1,6 @@
 plugins {
-    id 'fabric-loom' version '1.14-SNAPSHOT'
-    id 'ploceus' version '1.14-SNAPSHOT'
+    id 'fabric-loom' version '1.19-SNAPSHOT'
+    id 'ploceus' version '1.19-SNAPSHOT'
 }
 
 base {
@@ -20,6 +20,10 @@ repositories {
     maven { url 'https://fastdl.crazyh.fun/maven/' }
 }
 
+ploceus {
+	setIntermediaryGeneration(2)
+}
+
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings ploceus.featherMappings(project.feather_build)
@@ -27,12 +31,11 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	// carpet core
     // from self-hosted maven
-	modImplementation "carpet:ornithe-carpet:${carpet_core_version}"
+	modImplementation "carpet:ornithe-carpet:${carpet_core_version}+mc1.12.2"
     // if using jitpack
 //    modImplementation "com.github.CrazyHPi:ornithe-carpet:${carpet_core_version_jitpack}"
 
 	// osl if you want
-	// ploceus.addCommonLibraries()
 	// ploceus.dependOsl(project.osl_version)
 }
 
